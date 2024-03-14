@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-{% extends "dash.html" %}
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% block title %}base title{% endblock %}</title>
 </head>
 <body>
-{% block content %}
-<h1>Hello New</h1>
+{% block heading %}
+<h1>base heading</h1>
 {% endblock %}
-
 </body>
 </html>

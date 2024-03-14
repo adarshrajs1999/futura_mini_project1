@@ -27,4 +27,4 @@ def test3(request):
     return render(request,"form.html",{'todoform':data})
 
 def test4(request):
-    return render(request,"new.html")
+    return render(request,"child.html")

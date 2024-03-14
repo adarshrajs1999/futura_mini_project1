@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>form</title>
-</head>
-<body>
+<!--template inheritance-->
+{% extends 'dash.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
 <form method="POST">
 {% csrf_token %}
-{{todoform}}        <!--jinja format-->
+{{todoform|crispy}}        <!--jinja format-->
 <button type="submit">Submit</button>
 </form>
-</body>
-</html>
+{% endblock %}
