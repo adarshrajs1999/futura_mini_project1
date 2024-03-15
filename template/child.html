@@ -1,5 +1,28 @@
-{% extends 'base.html' %}
-{% block title %}overriden title{% endblock %}
-{% block heading %}overriden heading{% endblock %}
+{% extends 'dash.html' %}
+{{todokey}}
+{% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">subject</th>
+      <th scope="col">data</th>
+      <th scope="col">date</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for i in todokey %}
+    <tr>
+
+      <td>{{i.subject}}</td>
+      <td>{{i.data}}</td>
+        <td>{{i.date}}</td>
+
+    </tr>
+{% endfor %}
+ </tbody>
+</table>
+{% endblock %}
+
+
 
 

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 
 from myapp.forms import todoform
+from myapp.models import Todo
 
 
 # Create your views here.
@@ -28,3 +29,9 @@ def test3(request):
 
 def test4(request):
     return render(request,"child.html")
+
+
+def data(request):
+    todo=Todo.objects.all()
+    print(todo)
+    return render(request, "child.html",{'todokey':todo})
