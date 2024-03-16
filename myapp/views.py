@@ -25,13 +25,10 @@ def test3(request):
             obj.save()
             return redirect("/")
     data = todoform()
-    return render(request,"form.html",{'todoform':data})
-
-def test4(request):
-    return render(request,"child.html")
+    return render(request,"form.html",{'todokey':data})
 
 
 def data(request):
     todo=Todo.objects.all()
     print(todo)
-    return render(request, "child.html",{'todokey':todo})
+    return render(request, "data.html",{'todo':todo})
