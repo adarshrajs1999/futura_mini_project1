@@ -1,8 +1,9 @@
 from django.urls import path, include
 from . import views
 urlpatterns = [
-    path("",views.test1,name="test1"),
-    path("dash/",views.test2,name="test2"),
-    path("form/",views.test3,name="test3"),
-    path("data/",views.data,name="data")
+    path("",views.todo,name="todo"),
+    path("dash/",views.dash,name="dash"),
+    path("form/",views.form,name="form"),
+    path("data/",views.data,name="data"),
+    path("delete/<int:obj_id>",views.delete_1,name='delete')
 ]

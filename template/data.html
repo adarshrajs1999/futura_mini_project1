@@ -1,20 +1,26 @@
 {% extends 'dash.html' %}
-{{todokey}}
+{{data}}
 {% block content %}
 <table class="table">
   <thead>
     <tr>
+      <th scope="col">id</th>
       <th scope="col">subject</th>
       <th scope="col">data</th>
       <th scope="col">date</th>
+      <th scope="col">Update</th>
     </tr>
   </thead>
   <tbody>
-  {% for i in todo %}
+  {% for i in data %}
+  <!--   i-each model object & data-list of all model objects -->
+  <!--  calling each object attribute in jinja format-->
     <tr>
+      <td>{{i.id}}</td>
       <td>{{i.subject}}</td>
       <td>{{i.data}}</td>
       <td>{{i.date}}</td>
+      <td><a href="{% url 'delete' i.id %}"><button type="button" class="btn btn-danger">DELETE</button></a></td>
     </tr>
 {% endfor %}
  </tbody>

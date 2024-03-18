@@ -5,30 +5,31 @@ from myapp.models import Todo
 
 
 # Create your views here.
-def test1(request):
+def todo(request):
     return render(request,"todo.html")
 
 
-def test2(request):
-    if request.method=='POST':
-        obj=todoform(request.POST)
-        if obj.is_valid():
-            obj.save()
-            return redirect("/")
-    data = todoform()
-    return render(request,"dash.html",{'todoform':data})
+def dash(request):
+    return render(request,"dash.html",)
 
-def test3(request):
+def form(request):
     if request.method == 'POST':
         obj = todoform(request.POST)
         if obj.is_valid():
             obj.save()
             return redirect("/")
     data = todoform()
-    return render(request,"form.html",{'todokey':data})
+    return render(request,"form.html",{'todoform':data})
 
 
 def data(request):
-    todo=Todo.objects.all()
-    print(todo)
-    return render(request, "data.html",{'todo':todo})
+    data=Todo.objects.all()    #returns a list of all model objects
+    print(data)
+    return render(request, "data.html",{'data':data})
+
+
+def delete_1(request,obj_id):
+    data = Todo.objects.get(id=obj_id)
+    print(data)
+    data.delete()
+    return redirect('data')
