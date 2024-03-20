@@ -1,0 +1,11 @@
+<!--template inheritance-->
+{% extends 'dash.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form method="POST">
+{% csrf_token %}
+{{form|crispy}}        <!--jinja format-->
+<button type="submit">Submit</button>
+</form>
+{% endblock %}

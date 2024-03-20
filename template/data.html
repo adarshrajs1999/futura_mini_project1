@@ -8,6 +8,7 @@
       <th scope="col">subject</th>
       <th scope="col">data</th>
       <th scope="col">date</th>
+      <th scope="col">Delete</th>
       <th scope="col">Update</th>
     </tr>
   </thead>
@@ -21,6 +22,7 @@
       <td>{{i.data}}</td>
       <td>{{i.date}}</td>
       <td><a href="{% url 'delete' i.id %}"><button type="button" class="btn btn-danger">DELETE</button></a></td>
+       <td><a href="{% url 'update' i.id %}"><button type="button" class="btn btn-primary">UPDATE</button></a></td>
     </tr>
 {% endfor %}
  </tbody>
