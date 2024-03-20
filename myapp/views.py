@@ -35,12 +35,11 @@ def delete_1(request,obj_id):
     return redirect('data')
 
 def update_1(request,obj_id):
-    data=Todo.objects.get(id=obj_id)
-    form=todoform(instance=data)
+    obj=Todo.objects.get(id=obj_id)
+    form=todoform(instance=obj)
     if request.method =='POST':
-        form=todoform(request.POST,instance=data)
+        form=todoform(request.POST,instance=obj)
         if form.is_valid():
             form.save()
             return redirect("data")
-
     return render(request,"update.html",{'form':form})
