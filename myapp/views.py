@@ -28,14 +28,14 @@ def data(request):
     return render(request, "data.html",{'data':data})
 
 
-def delete_1(request,obj_id):
-    data = Todo.objects.get(id=obj_id)
+def delete_1(request,id):
+    data = Todo.objects.get(id=id)
     print(data)
     data.delete()
     return redirect('data')
 
-def update_1(request,obj_id):
-    obj=Todo.objects.get(id=obj_id)
+def update_1(request,id):
+    obj=Todo.objects.get(id=id)
     form=todoform(instance=obj)
     if request.method =='POST':
         form=todoform(request.POST,instance=obj)
