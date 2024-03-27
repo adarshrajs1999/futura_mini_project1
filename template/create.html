@@ -6,6 +6,10 @@
 <form method="POST">
 {% csrf_token %}
 {{todoform|crispy}}        <!--jinja format-->
-<button type="submit">Submit</button>
+<button type="submit" class="btn btn-success">Submit</button>
 </form>
+{% endblock %}
+
+{% block home %}
+<a href="{% url 'todo' %}"><button type="button" class="btn btn-warning">Home Page</button></a>
 {% endblock %}

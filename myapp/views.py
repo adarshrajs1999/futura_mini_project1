@@ -12,27 +12,27 @@ def todo(request):
 def dash(request):
     return render(request,"dash.html",)
 
-def form(request):
+def create(request):
     if request.method == 'POST':
         obj = todoform(request.POST)
         if obj.is_valid():
             obj.save()
             return redirect("/")
     data = todoform()
-    return render(request,"form.html",{'todoform':data})
+    return render(request,"create.html",{'todoform':data})
 
 
-def data(request):
+def read(request):
     data=Todo.objects.all()    #returns a list of all model objects
     print(data)
-    return render(request, "data.html",{'data':data})
+    return render(request, "read.html",{'data':data})
 
 
 def delete_1(request,id):
     data = Todo.objects.get(id=id)
     print(data)
     data.delete()
-    return redirect('data')
+    return redirect("read")
 
 def update_1(request,id):
     obj=Todo.objects.get(id=id)
@@ -41,5 +41,5 @@ def update_1(request,id):
         form=todoform(request.POST,instance=obj)
         if form.is_valid():
             form.save()
-            return redirect("data")
+            return redirect("read")
     return render(request,"update.html",{'form':form})

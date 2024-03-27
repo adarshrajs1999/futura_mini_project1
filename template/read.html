@@ -22,13 +22,16 @@
       <td>{{i.data}}</td>
       <td>{{i.date}}</td>
       <td><a href="{% url 'delete_1' i.id %}"><button type="button" class="btn btn-danger">DELETE</button></a></td>
-       <td><a href="{% url 'update_1' i.id %}"><button type="button" class="btn btn-primary">UPDATE</button></a></td>
+       <td><a href="{% url 'update_1' i.id %}"><button type="button" class="btn btn-info">UPDATE</button></a></td>
     </tr>
 {% endfor %}
  </tbody>
 </table>
 {% endblock %}
 
+{% block home %}
+<a href="{% url 'todo' %}"><button type="button" class="btn btn-warning">Home Page</button></a>
+{% endblock %}
 
 
 
