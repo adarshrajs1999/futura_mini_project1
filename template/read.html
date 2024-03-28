@@ -9,8 +9,8 @@
       <th scope="col">salary</th>
       <th scope="col">dob</th>
       <th scope="col">bio</th>
-      <th scope="col">Delete</th>
       <th scope="col">Update</th>
+      <th scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -23,8 +23,8 @@
       <td>{{i.salary}}</td>
       <td>{{i.dob}}</td>
       <td>{{i.bio}}</td>
-       <td><a href="{% url 'update_1' i.id %}"><button type="button" class="btn btn-info">UPDATE</button></a></td>
-       <td><a href="{% url 'delete_1' i.id %}"><button type="button" class="btn btn-danger">DELETE</button></a></td>
+       <td><a href="{% url 'update_1' i.id %}"><button type="button" class="btn btn-info">Update</button></a></td>
+       <td><a href="{% url 'delete_1' i.id %}"><button type="button" class="btn btn-danger">Delete</button></a></td>
     </tr>
 {% endfor %}
  </tbody>
