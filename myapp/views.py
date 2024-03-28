@@ -35,7 +35,7 @@ def delete_1(request,id):
     return redirect("read")
 
 def update_1(request,id):
-    obj=Todo.objects.get(id=id)
+    obj=Todo.objects.get(pk=id)
     form=todoform(instance=obj)
     if request.method =='POST':
         form=todoform(request.POST,instance=obj)
