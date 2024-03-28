@@ -5,9 +5,10 @@
   <thead>
     <tr>
       <th scope="col">id</th>
-      <th scope="col">subject</th>
-      <th scope="col">data</th>
-      <th scope="col">date</th>
+      <th scope="col">name</th>
+      <th scope="col">salary</th>
+      <th scope="col">dob</th>
+      <th scope="col">bio</th>
       <th scope="col">Delete</th>
       <th scope="col">Update</th>
     </tr>
@@ -18,9 +19,10 @@
   <!--  calling each object attribute in jinja format-->
     <tr>
       <td>{{i.id}}</td>
-      <td>{{i.subject}}</td>
-      <td>{{i.data}}</td>
-      <td>{{i.date}}</td>
+      <td>{{i.name}}</td>
+      <td>{{i.salary}}</td>
+      <td>{{i.dob}}</td>
+      <td>{{i.bio}}</td>
        <td><a href="{% url 'update_1' i.id %}"><button type="button" class="btn btn-info">UPDATE</button></a></td>
        <td><a href="{% url 'delete_1' i.id %}"><button type="button" class="btn btn-danger">DELETE</button></a></td>
     </tr>
